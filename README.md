@@ -1,76 +1,16 @@
-# Starter Application
+# Geeky Math Web
 
-## Prerequisites
+## Description
 
-1. Install Ruby via [RailsInstaller](http://railsinstaller.org/en) *(install latest version)*
+A web application that teaches basic binary and hexadecimal conversion skills with hopes to expand into Boolean Circiutry and Boolean Algebra.
 
-2. ```
-   bundle install --without production
-   ```
-   ​
-## Running the Application
-1. Install the rerun gem: `gem install rerun`
-
-2. ```
-   rerun 'bundle exec ruby app.rb'
-   ```
-   ​
-
-## What is in the box
-
-1. Authentication System: "/login", "/logout", "/sign_up"
-
-2. User model
-
-3. Bootstrap
-
-   ​
-
-
-## Protecting pages from non-signed in users
-
-### authenticate!
-
-I have created a helper method `authenticate!` which, when called, will redirect the user to the sign in page if they are not signed in. This will help you protect pages that should only be accessed by signed in users.
-
-To define a URL in which the person must be signed in to view, use the `authenticate!` method.
-
-For example:
-
-```ruby
-get "/dashboard" do 
-  authenticate!
-  erb :dashboard
-end
-```
-
-
-
-### Who is Signed in?
-
-To get information about the current signed in user, use the `current_user` method which returns the user object of the current signed in user or `nil` if no one is signed in.
-
-In a template:
-
-```erb
-Hello <%= current_user.email %>
-```
-
-
-
-In code:
-
-```ruby
-get '/say_hello' do
-	if current_user
-      return "Hello #{current_user.email}!"
-    else
-      return "Hello World!"
-    end
-end
-```
-
-
+Goals:
+1. Working Random Problems (Binary)
+2. Lesson Plans (Binary)
+3. Working Random Problems (Hexadecimal)
+4. Lesson Plans (Hexadecimal)
+5. Teacher Login
+6. Create Problem Sets/Assignments (Teacher)
 
 ## Deploying to Heroku
 
