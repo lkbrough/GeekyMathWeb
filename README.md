@@ -5,9 +5,9 @@
 A web application that teaches basic binary and hexadecimal conversion skills with hopes to expand into Boolean Circiutry and Boolean Algebra.
 
 Goals:
-1. Working Random Problems (Binary)
+1. Working Random Problems (Binary) |Completed 1/10/2019|
 2. Lesson Plans (Binary)
-3. Working Random Problems (Hexadecimal)
+3. Working Random Problems (Hexadecimal) |Completed 1/10/2019|
 4. Lesson Plans (Hexadecimal)
 5. Teacher Login
 6. Create Problem Sets/Assignments (Teacher)
