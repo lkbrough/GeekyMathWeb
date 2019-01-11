@@ -15,6 +15,7 @@ class User
     property :id, Serial
     property :email, String
     property :password, String
+    property :teacher, Integer, :default => 0
     property :type, Integer, :default => 1
 
     def login(password)

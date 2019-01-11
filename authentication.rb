@@ -68,3 +68,9 @@ def authenticate!
 		redirect "/login"
 	end
 end
+
+def student!
+	if !current_user || current_user.teacher != 0
+		redirect "/"
+	end
+end
