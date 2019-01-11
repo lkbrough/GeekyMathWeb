@@ -1,38 +1,47 @@
 class Problem
+	attr_reader :number, :solution, :type
+
 	def initialize(problem_num, type)
 		@type = type
+		create(problem_num)
+	end
+
+	def create(problem_num)
+		problem_num = problem_num.to_int
 		if is_decimal_to_binary
-			@number = problem_num
+			@number = problem_num.to_s
 			@solution = problem_num.to_s(2)
 		elsif is_binary_to_decimal
 			@number = problem_num.to_s(2)
-			@solution = problem_num
+			@solution = problem_num.to_s
 		elsif is_random_binary
 			choice = rand(2)
 			if choice == 0
-				@number = problem_num
+				@number = problem_num.to_s
 				@solution = problem_num.to_s(2)
 			else
 				@number = problem_num.to_s(2)
-				@solution = problem_num
+				@solution = problem_num.to_s
 			end
+			return choice
 		elsif is_decimal_to_hex
-			@number = problem_num
+			@number = problem_num.to_s
 			@solution = problem_num.to_s(16)
 		elsif is_hex_to_decimal
 			@number = problem_num.to_s(16)
-			@solution = problem_num
+			@solution = problem_num.to_s
 		elsif is_random_hex
 			choice = rand(2)
 			if choice == 0
-				@number = problem_num
+				@number = problem_num.to_s
 				@solution = problem_num.to_s(16)
 			else
 				@number = problem_num.to_s(16)
-				@solution = problem_num
+				@solution = problem_num.to_s
 			end
+			return choice
 		else
-			@number = problem_num
+			@number = problem_num.to_s
 			@solution = problem_num.to_s(10)
 		end
 	end
@@ -66,26 +75,25 @@ class Problem
 	end
 end
 
-class RandomProblemGenerator < Problem
+class Random_Problem_Generator < Problem
 	def initialize(type)
 		@problem = 0
-		number = rand((@problem / 5) * 4)
+		number = rand(((@problem / 5) + 1) * 4)
 		super(number, type)
 	end
 
 	def generate
-		number = rand((@problem / 5) * 4)
+		number = rand(((@problem / 5) + 1) * 4)
 		@problem += 1
-		super(number, @type)
+		create(number)
 	end
 
 	def check(ans)
-		if super.check(ans)
+		if super(ans)
 			@problem += 1
-			return true
 		else
 			@problem = 0
-			return false
 		end
+		return super(ans)
 	end
 end

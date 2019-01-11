@@ -1,0 +1,16 @@
+<form action="/check" method="POST">
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title"><%= @instructions %>: <%= @problem.number.upcase %></h5>
+		<input type="text" name="answer"><br/>
+		<input type="submit" value="Submit" type="button" class="btn btn-info"><br/>
+		<div>
+			<% if @previous == true %>
+				Previous Answer was correct!
+			<% elsif @previous == false %>
+				Previous Answer was incorrect. The correct answer was <%= @answer.upcase %>
+			<% end %>
+		</div>
+	</div>
+</div>
+</form>
